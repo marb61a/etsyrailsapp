@@ -1,2 +1,3 @@
-class Listing < ActiveRecord::Base
+class User < ActiveRecord::Base
+  has_attached_file :image, :styles => { :medium => "200x>", :thumb => "100x100>" }, :default_url => "noimageavailable.png"
 end
