@@ -17,7 +17,6 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -40,6 +39,7 @@ class ListingsController < ApplicationController
       end
     end
   end
+  
 
   def destroy
     @listing.destroy
@@ -59,3 +59,4 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:name, :description, :price, :image)
     end
 end
+
