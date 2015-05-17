@@ -1,7 +1,12 @@
 class Listing < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "noimageavailable.png",
-                    :storage => :dropbox,
-                    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+  if Rails.env.development?
+    has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "default.jpg"
+  else  
+    has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "noimageavailable.png",
+                      :storage => :dropbox,
+                      :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+                      :path => ":style/:id_:filename"
+  end  
   
   # Paperclip 4 onwards require validation of image and content type
   # or explicitly telling that there will be no validation which is
