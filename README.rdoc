@@ -12,5 +12,8 @@ It uses the following technologies
 - Stripe for payment management
 
 
-*******
+********
 As of Paperclip 4 and up there must be validation present!!!
+
+********
+Removed working project from Heroku and demo image for jumbotron
