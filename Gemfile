@@ -13,6 +13,7 @@ gem "paperclip-dropbox", ">= 1.1.7"
 
 gem "figaro"
 gem 'devise'
+gem 'stripe'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
